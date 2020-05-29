@@ -1,5 +1,10 @@
 # README
 
+## Required
+
+- docker
+- target fasta (e.g. [Tak-1 ver5 protein fasta](http://marchantia.info/download/tak1v5.1/MpTak1v5.1_r1.protein.fasta))
+
 ## build & run
 
 ```bash
