@@ -1,6 +1,11 @@
 # README
 
+## build & run
 
+```bash
+docker build -t blast:latest ./blast+
+docker run --rm -it -v $(pwd):/local_volume blast:latest
+```
 
 ## makeblastdb
 
@@ -24,7 +29,7 @@ blastp -db target_db_name -query query.fa -outfmt"7" -out output.tsv
 
 ## extract sequence 
 
-extracting sequences with a ceratin evalue from fasta
+extracting sequences with a ceratin evalue from fasta (default evalue is 0.01)
 
 ```bash
 extract_sequence -i output.tsv -f target.fa --evalue 1e-5
