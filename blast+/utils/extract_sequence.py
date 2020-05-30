@@ -34,11 +34,11 @@ def read_blast_tabler_fmt(path):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--input", type=str, required=True)
-    parser.add_argument("-f", "--fasta", type=str, required=True)
-    parser.add_argument("-o", "--output", type=str, default=None)
-    parser.add_argument("--evalue", type=float, default=1e-2)
+    parser = argparse.ArgumentParser("This script can extract sequence with a certain evalue from fasta and blast result (fmt7)")
+    parser.add_argument("-i", "--input", type=str, required=True, help="path to a blast result fmt7")
+    parser.add_argument("-f", "--fasta", type=str, required=True, help="path to a fasta file ")
+    parser.add_argument("-o", "--output", type=str, default=None, help="path to a output file, default is a current directory")
+    parser.add_argument("--evalue", type=float, default=1e-2, help="the evalue criteria, default is 1e-2")
     args = parser.parse_args()
 
     df = read_blast_tabler_fmt(args.input)
