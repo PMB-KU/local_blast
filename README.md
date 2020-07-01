@@ -19,7 +19,7 @@ docker run --rm -it -v $(pwd):/local_volume blast:latest
 ### Nucleic Acid
 
 ```bash
-makeblastdb -dbtype  -in target.fa -out target_db_name
+makeblastdb -dbtype nucl -in target.fa -out target_db_name
 ```
 
 ### Protein
@@ -33,6 +33,25 @@ makeblastdb -dbtype prot -in target.fa -out target_db_name
 ```bash
 blastp -db target_db_name -query query.fa -outfmt "7" -out output.tsv
 ```
+
+outfmt 7 needs to extract sequence.
+
+fmt is below. defalut is 0.
+
+|No.|description|
+|---|---|
+|0|paairwise|
+|1|query-anchored showing identities,|
+|2|query-anchored no identities,|
+|3|flat query-anchored, show identities,|
+|4|flat query-anchored, no identities,|
+|5|XML Blast output|
+|6|tabular|
+|7|tabular with comment lines|
+|8|Text ASN.1|
+|9|Binary ASN.1|
+|10|Comma-separated values,|
+|11|BLAST archive format (ASN.1)|
 
 ## extract sequence
 
