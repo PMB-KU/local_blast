@@ -31,10 +31,10 @@ makeblastdb -dbtype prot -in target.fa -out target_db_name
 ## RUN blastp
 
 ```bash
-blastp -db target_db_name -query query.fa -outfmt"7" -out output.tsv
+blastp -db target_db_name -query query.fa -outfmt "7" -out output.tsv
 ```
 
-## extract sequence 
+## extract sequence
 
 extracting sequences with a ceratin evalue from fasta (default evalue is 0.01). This is in house python script.
 

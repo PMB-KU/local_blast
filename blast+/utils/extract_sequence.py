@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 
+import re
 import argparse
 import pandas as pd
 
@@ -9,7 +10,7 @@ def read_fasta(path):
     with open(path) as f:
         for line in f:
             if line.startswith(">"):
-                id = line.rstrip("\n").split(" ")[0]
+                id = re.split(' |\t', line.rstrip("\n"))
                 id_seq.setdefault(id, "")
             else:
                 id_seq[id] += line.rstrip("\n") 
