@@ -7,11 +7,22 @@
 
 if you do not have docker, please download [here](https://docs.docker.com/get-docker/) and install.
 
-## build & run
+## create env
+
+### build & run
 
 ```bash
 docker build -t blast:latest ./blast+
 docker run --rm -it -v $(pwd):/local_volume blast:latest
+```
+
+### pull & run
+
+You can use pre-build image from Docker-Hub
+
+```bash
+docker pull illumination27/blast:latest
+docker run --rm -it -v $(pwd):/local_volume illumination27/blast:latest
 ```
 
 ## makeblastdb
